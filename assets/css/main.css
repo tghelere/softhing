@@ -1,30 +1,165 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,400i');
-body{ background: url(images/banner_bg.jpg) no-repeat top left #FFFFFF; font-family: 'Exo', sans-serif; background-size: 140%; background-position-y: 25px; }
+html{height: 100%;}
+body{ background-color: #FFFFFF; font-family: 'Exo', sans-serif; height: 100%;}
 a{ color: #878888; }
 a:hover{ color: #39C0D6; }
 a:active{ color: #024751; }
 p{ color: #878888; }
 .btn-sft{ background-color: #39C0D6; color: #FFFFFF; border: none; border-radius: 0;}
 .btn-sft:hover{ background-color: #78f3ff; color: #FFFFFF; }
-.btn-sft:active{ background-color: #008fa5; color: #FFFFFF; }
+.btn-sft:active{ background-color: #008fa5; color: #FFFFFF; border: 0; }
 
-h2{ font-size: 25pt; }
+h2{ font-size: 25pt; color: #878888; }
 h3{ font-size: 25pt; font-style: italic; }
 p{ font-size: 15pt; }
 
-header{ height: 80px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: flex-end; }
-header .logo{ margin-left: 30px; }
-header .logo a{ background: url(images/logo.png) no-repeat center center; height: 45px; width: 185px; display: block; background-size: cover;}
+header{ padding: 40px 0; display: flex; }
+header .logo{ height: 45px; width: 185px; float: left; }
+header .logo a{ background: url(images/logo.png) no-repeat center center; height: 100%; width: 100%; display: block; background-size: cover;}
 header .logo a h1{ display: none; }
-/*temp*/ ul{ display: none;}
+header ul.menu{ float: right; padding: 0; margin: 0;}
+header ul.menu li{ display: inline-block; line-height: 45px; margin-left: 30px; }
+header a.menu-mobile{ display: none; margin-top: 10px;}
+header .open-menu-mobile{ display: none;}
 
-section .banner{ width: 100%; background: url(images/banner_pessoa.png) no-repeat 185% 0; background-size: 68%; padding-bottom: 10px; }
-section .banner h2{ font-size: 15pt; border-bottom: 2px solid #39C0D6; padding: 120px 10px 20px 15px; width: 60%; }
-section .content{ padding: 0 15px; }
-section .content h3{ font-size: 15pt; text-align: center; color: #39C0D6; margin: 20px 0; }
-section .content a.btn{ width: 80%; display: block; margin: 0 auto; text-transform: uppercase; font-weight: bold; margin-bottom: 30px; }
-section .content p{ margin: 0;  }
-section .content p.destaque{ margin: 20px 0; text-decoration: underline; text-underline-position: above; -webkit-text-underline-position: under; -ms-text-underline-position: below; }
+section{ background: url(images/bg.png) no-repeat top right; background-size: cover; width: 100%; position: absolute; bottom: 100px;}
+section .content{ background: url(images/banner_pessoa.png) no-repeat left bottom; background-size: contain; padding: 5% 0 ; background-position-x: 95%;  width: 100%;}
+section .left{ text-align: center;}
+section .left h2{ border-bottom: 2px solid #39C0D6; padding: 0 0 20px; }
+section .left h3{ text-align: center; color: #39C0D6; margin: 20px 0; }
+section .left a.btn{ width: 80%; font-size: 18pt; display: block; margin: 0 auto; text-transform: uppercase; font-weight: bold; margin-bottom: 30px;  line-height: 50px;}
+section .left p{ margin: 0;  }
+section .left p.destaque{ margin: 20px 0; text-decoration: underline; }
 
+footer{ height: 100px; width: 100%; background-color: #878888; position: absolute; bottom: 0; }
 
+.full-form{ display:none;  width: 100%; height: 100%; min-height: 100%;  -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; background-color: rgba(255, 255, 255, 0.5); z-index: 4; position: absolute; top: 0; }
+.full-form.active{ display: flex; display: -webkit-flex; }
+.form-proposta { background-color: #fff; width: 70%; max-width:1024px; min-width: 840px; z-index: 5; border: 1px solid #000; }
 
+.form-proposta a.close-form{ display: block;  width: 25px; height: 25px; position: absolute; overflow: hidden; top: 20px; right: 40px;}
+.form-proposta a.close-form.first{ display: none; }
+.form-proposta a.close-form span{ width: 100%; height: 2px; content: ""; display: block; background-color: #000; position: absolute; left: 0; }
+.form-proposta a.close-form span:nth-child(1){ top: 15px; transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -webkit-transform: rotate(45deg); }
+.form-proposta a.close-form span:nth-child(2){ top: 15px !important; transform: rotate(135deg); -moz-transform: rotate(135deg); -o-transform: rotate(135deg); -webkit-transform: rotate(135deg); }
+
+.form-proposta .part{padding: 10% 0;}
+.form-proposta .left{padding-left:10%;  padding-right: 2%;}
+.form-proposta .right{padding-left:2%;  padding-right: 10%;}
+
+.form-proposta form label{ font-size: 9pt;}
+.form-proposta form label.small{ display: none;}
+.form-proposta form .form-group{ margin: 0;}
+.form-proposta form .form-control:focus{  box-shadow: none; }
+
+.form-proposta form .left label{ color: #39C0D6; text-transform: uppercase; position: relative; top: 40px;}
+.form-proposta form .left input{ border-radius: 0; border:0; border-bottom: 2px solid #878888; text-align: right;}
+.form-proposta form .left input:focus{ border-color: #39C0D6; }
+
+.form-proposta form .right{ padding-top: 100px; }
+.form-proposta form .right textarea{ border-radius: 0; border: 2px solid #878888; }
+.form-proposta form .right textarea:focus{ border-color:#39C0D6; }
+.form-proposta form .right label{ color: #39C0D6; text-transform: uppercase;}
+.form-proposta form .right .checks{ padding-top: 50px;}
+.form-proposta form .right .firstCheck{ padding: 0;}
+.form-proposta form .right .lastCheck{ padding-right: 0;}
+.form-proposta form .right .form-check .form-group{ margin: 5px 0; }
+.form-proposta form .right .form-check label { cursor: pointer; }
+.form-proposta form .right .form-check input[type=checkbox]{ display:none; } 
+.form-proposta form .right .form-check input[type="checkbox"] + label:before { border: 1px solid #39C0D6; content: "\00a0"; display: inline-block; font: 20px/1em sans-serif; height: 16px; margin: 0 .25em 0 0; padding:5px; vertical-align: sub; width: 16px; box-sizing: unset; }
+.form-proposta form .right .form-check input[type="checkbox"]:checked + label:before { background: #39C0D6; color: #FFF; content: "\2714"; padding: 5px; text-align: center; }
+
+.form-proposta form .right .enviar{text-align: right;}
+.form-proposta form .right .enviar button{ width: 40%; }
+
+@media (max-width: 539px) { 
+    body{ background: url(images/bg.png) no-repeat bottom right; background-size: 400%; background-position-x: 40%; }
+    header{ padding: 15px 0;}
+    header ul.menu{ display: none;}
+    header .open-menu-mobile{ display: none; width: 70%; height: 300px; border: 1px solid #000; position: fixed; top:0; right:0; background-color: #fff; z-index: 1;}
+    header .open-menu-mobile.ativo{ display: block; }
+    header .open-menu-mobile ul{ padding: 0; height: 100%; width: 100%; position: absolute;}
+    header .open-menu-mobile ul li{ list-style: none; width: 100%; text-align: center; height: 50%;}
+    header .open-menu-mobile ul li.fone a{ position: relative; top: 70%;}
+    header .open-menu-mobile ul li.mail::before{ content: ""; display: block; width: 70%; margin: 0 auto; height: 1px; background-color:#000; margin-bottom: 20px;}
+    
+    header a.menu-mobile{ display: block; /*line-height: 45px; */ float: right; width: 25px; height: 25px; position: relative; overflow: hidden; z-index: 2;}
+    header a.menu-mobile span{ width: 100%; height: 2px; content: ""; display: block; background-color: #000; position: absolute; left: 0; }
+    header a.menu-mobile span:nth-child(1){top: 6px}
+    header a.menu-mobile span:nth-child(2){top: 13px}
+    header a.menu-mobile span:nth-child(3){top: 20px}
+    header a.ativo span:nth-child(1){ top: 15px; transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -webkit-transform: rotate(45deg); }
+    header a.ativo span:nth-child(2){ display: none }
+    header a.ativo span:nth-child(3){ top: 15px !important; transform: rotate(135deg); -moz-transform: rotate(135deg); -o-transform: rotate(135deg); -webkit-transform: rotate(135deg); }
+    section{position: unset; background: none; }
+    section .content{ background: none; width: 100%; position: unset; padding: 5% 0 0;}
+    section .left h2{ font-size: 18pt; }
+    section .left h3{ font-size: 18pt; }
+    section .left a.btn{ font-size: 16pt; line-height: 30px; margin-bottom: 20px;}
+    section .left p{ font-size: 16px; }
+    section .left p.destaque{ margin: 5px 0; }
+    footer{display: none;}
+
+    .form-proposta { min-width: 0; width: 90%; position: absolute; top: 50px; margin-bottom: 50px; }
+    .form-proposta .left,
+    .form-proposta .right{ padding: 0; }
+    .form-proposta .right{ padding-top: 0 !important; }    
+    .form-proposta .part{ padding: 8%; }
+    .form-proposta .left {padding-top: 25%;}
+    .form-proposta form .right .lastCheck {padding: 0;}
+    .form-proposta form input{ font-size: 10pt;}
+    .form-proposta h4,
+    .form-proposta p.sub{ text-align: center; font-size: 14pt; }
+    .form-proposta a.close-form.second{ display: none; }
+    .form-proposta a.close-form.first{ display: block; }    
+    .form-proposta form label{ font-size: 8pt;}
+    .form-proposta form label.small{ display: block;}
+    .form-proposta form label.big{ display: none;}
+    .form-proposta p#serv{ font-size: 12pt !important;}
+    .form-proposta form .left label{ top: 33px;}
+}
+
+@media (min-width: 540px) and (max-width: 767px) {
+    body{ background: url(images/bg.png) no-repeat bottom right; background-size: 400%; background-position-x: 40%; }
+    section{position: unset; background: none; }
+    section .content{ background: none; width: 100%; position: unset; padding: 5% 0 0;}
+    section .left h2{ font-size: 20pt; }
+    section .left h3{ font-size: 20pt; }
+    footer{display: none;}
+
+    .form-proposta { min-width: 0; width: 90%; position: absolute; top: 50px; margin-bottom: 50px; }
+    .form-proposta .left,
+    .form-proposta .right{ padding: 0; }    
+    .form-proposta .right{ padding-top: 0 !important; }    
+    .form-proposta .part{ padding: 8%; }
+    .form-proposta form .right .lastCheck {padding: 0;}
+    .form-proposta h4,
+    .form-proposta p.sub{ text-align: center; }
+    .form-proposta a.close-form.second{ display: none; }
+    .form-proposta a.close-form.first{ display: block; }    
+    .form-proposta form label{ font-size: 8pt;}
+}
+
+@media (min-width: 768px) and (max-width: 949px) {
+    section .content{ background-size: 63%; background-position-x: 155%;}
+    section .left h2{ padding: 0 0 10px; font-size: 20pt; }
+    section .left h3{ margin: 10px 0; font-size: 20pt; }
+    section .left a.btn{ margin-bottom: 20px;  line-height: 40px;}
+    section .left p.destaque{ margin: 10px 0;}
+
+    .form-proposta { min-width: 750px; }
+    .form-proposta .left{ padding-left:8%; }
+    .form-proposta .right{ padding-right: 8%; }
+    .form-proposta form label{ font-size: 8pt;}
+
+}
+
+@media (min-width: 950px) and (max-width: 1199px) {
+    section .content{ background-size: auto; background-position-x: 150%;}
+}
+
+@media (min-width: 1200px) and (max-width: 1365px) {
+    section .content{ background-size: auto;}
+}
+
+/* @media (min-width: 1366px) {} */
